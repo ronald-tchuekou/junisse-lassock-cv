@@ -1,0 +1,53 @@
+/********************\
+    Mixin
+\********************/
+$content-types: "center", "end", "flex-end", "flex-start", "left", "right",
+    "safe", "unsafe", "start", "stretch";
+
+.d-flex {
+    display: flex;
+    width: 100%;
+    @each $type in $content-types {
+        &.content-#{$type} {
+            justify-content: #{$type};
+        }
+    }
+    &.content-between {
+        justify-content: space-between;
+    }
+    &.content-around {
+        justify-content: space-around;
+    }
+    &.content-evenly {
+        justify-content: space-evenly;
+    }
+    &.items-center {
+        align-items: center;
+    }
+    &.items-end {
+        align-items: flex-end;
+    }
+    &.items-start {
+        align-items: flex-start;
+    }
+    &.items-baseline {
+        align-items: baseline;
+    }
+    .flex-none {
+        flex: none;
+    }
+    .flex-auto {
+        flex: auto;
+    }
+    @for $var from 1 to 13 {
+        .flex-#{$var} {
+            flex: $var;
+        }
+        .flex-grow-#{$var} {
+            flex-grow: $var;
+        }
+        .flex-shrink-#{$var} {
+            flex-shrink: $var;
+        }
+    }
+}

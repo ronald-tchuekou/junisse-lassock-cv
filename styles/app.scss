@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;1,300&display=swap');
+
+// Colors
+$blue: #4581f6;
+$navi: #002265;
+$black: #07253c;
+$text-color: #14279b;
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+.logo {
+    background-color: $navi;
+    color: white;
+    border-radius: 10px;
+    padding: 3px 15px;
+}
+.app__header {
+    background-color: transparent;
+    .navbar {
+        background-color: transparent;
+        .nav-item:not(:last-child) {
+            a {
+                color: rgb(104, 104, 104);
+            }
+        }
+    }
+}
+.text-primary {
+    color: $navi;
+}
+.text-color {
+    color: $text-color;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-gray {
+    color: gray;
+}
+.text-center {
+    text-align: center;
+}
+.text-nw {
+    white-space: nowrap;
+}
+@for $var from 1 to 51 {
+    .text-#{$var} {
+        font-size: $var + px;
+    }
+}
+.card {
+    margin: 15px;
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 26px 5px rgba(0, 0, 0, 0.17);
+    border-radius: 13px;
+}
+
+footer {
+    height: 300px;
+    background: url('/wave.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
