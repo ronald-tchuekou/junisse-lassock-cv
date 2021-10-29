@@ -1,12 +1,19 @@
 import React from 'react';
 import { LangContext } from './context';
 import Lang from './lang';
-import Image from 'next/image';
 
 export const AppBanner = (props) => {
     const { lang } = React.useContext(LangContext);
+    /**
+     * @type React.CSSProperties
+     */
+    const style = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    };
     return (
-        <div className="row my-20 p-10 m-0">
+        <div className="row my-20 p-10 m-0" style={style}>
             <div className="col-12 col-m-7">
                 <div className="text-primary mt-10 mb-10">{Lang.hi[lang]}</div>
                 <h2 className="text-bold text-primary">{Lang.namer[lang]}</h2>
