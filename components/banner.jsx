@@ -5,7 +5,7 @@ import Lang from './lang';
 export const AppBanner = (props) => {
     const { lang } = React.useContext(LangContext);
     return (
-        <div className="d-flex d-flex-c m-d-flex-r content-center items-center my-20 p-10 m-0">
+        <div className="d-flex d-flex-c m-d-flex m-d-flex-r content-center items-center my-20 p-10 m-0">
             <div className="col-12 col-m-7">
                 <div className="text-primary mt-10 mb-10">{Lang.hi[lang]}</div>
                 <h2 className="text-bold text-primary">{Lang.namer[lang]}</h2>
