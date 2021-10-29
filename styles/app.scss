@@ -39,6 +39,13 @@ a {
         }
     }
 }
+.banner-img {
+    width: 100%;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 .text-primary {
     color: $navi;
 }

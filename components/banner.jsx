@@ -14,8 +14,8 @@ export const AppBanner = (props) => {
                 <p className="text-gray mt-10">{Lang.speech[lang]}</p>
             </div>
             <div className="col-12 col-m-5 ">
-                <div className="d-flex content-center items-center">
-                    <Image src="/heroImg.png" alt={'Prescription cv'} layout={'intrinsic'} width={340} height={340} />
+                <div className="d-flex content-center items-center banner-img mt-15">
+                    <img src="/heroImg.png" alt={'Prescription cv'} />
                 </div>
             </div>
         </div>
