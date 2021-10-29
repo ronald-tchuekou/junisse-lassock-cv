@@ -5,6 +5,7 @@ import Lang from './lang';
 export const AppBanner = (props) => {
     const { lang } = React.useContext(LangContext);
     /**
+     * Pour le centrage des éléments de la bannière.
      * @type React.CSSProperties
      */
     const style = {
