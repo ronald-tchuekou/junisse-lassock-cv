@@ -16,12 +16,13 @@ export const AppHeader = (props) => {
     }, [is_show]);
 
     return (
-        <div className="d-flex d-flex-c app__header p-10">
-            <div className="d-flex">
-                <div className="d-flex m-flex-grow-none content-between">
+        <div className="d-flex m-d-flex d-flex-c app__header p-10">
+            <div className="d-flex content-between items-center">
+                <div className="m-flex-grow-none">
                     <h1 className="logo color-primary">CV</h1>
                 </div>
-                <div className="m-hide d-flex content-end items-center">
+
+                <div className="m-hide">
                     <button
                         style={{ width: 40, height: 40 }}
                         onClick={() => show((s) => !s)}
@@ -34,7 +35,8 @@ export const AppHeader = (props) => {
                         )}
                     </button>
                 </div>
-                <div className="hide m-d-flex mt-10 d-flex-c m-d-flex-r m- content-around m-content-end items-center navbar">
+
+                <div className="hide m-show-flex m-d-flex m-d-flex-r m-content-end m-items-center navbar mt-10">
                     <div className="nav-item my-10 m-my-0">
                         <a href="#about" className="btn text-primary d-block w-100 m-w-auto">
                             {Lang.about[lang]}
@@ -61,7 +63,7 @@ export const AppHeader = (props) => {
                 </div>
             </div>
 
-            <div ref={slide_ref} className="d-flex hide m-d-flex-r hide content-around items-center navbar">
+            <div ref={slide_ref} className="hide d-flex d-flex-c content-around items-center navbar">
                 <div className="nav-item my-10 m-my-0 w-100 text-center" onClick={() => show(false)}>
                     <a href="#about" className="btn text-primary d-block">
                         {Lang.about[lang]}

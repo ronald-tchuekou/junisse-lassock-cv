@@ -97,6 +97,9 @@ $margins: '', 'b', 't', 'l', 'r', 'x', 'y';
     .#{$prefix}show {
         display: block;
     }
+    .#{$prefix}show-flex {
+        display: flex;
+    }
     .#{$prefix}d-block {
         display: block;
     }
