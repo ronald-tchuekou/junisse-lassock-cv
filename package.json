@@ -13,6 +13,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "mirajs": "^1.5.2",
         "next": "11.1.2",
         "node-sass": "^5.0.0",
         "prop-types": "^15.7.2",

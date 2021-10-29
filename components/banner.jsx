@@ -15,7 +15,7 @@ export const AppBanner = (props) => {
             </div>
             <div className="col-12 col-m-5 ">
                 <div className="d-flex content-center items-center">
-                    <Image src="/heroImg.png" alt="Prescription cv" width={340} height={340} />
+                    <Image src="/heroImg.png" alt={'Prescription cv'} layout={'intrinsic'} width={340} height={340} />
                 </div>
             </div>
         </div>

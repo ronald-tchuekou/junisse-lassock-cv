@@ -1,32 +1,84 @@
 import React from 'react';
 import { LangContext } from './context';
 import Lang from './lang';
+import { SlideAnimations } from 'mirajs/dist/js';
 
 export const AppHeader = (props) => {
+    const slide_ref = React.useRef(null);
+
     const { lang } = React.useContext(LangContext);
+
+    const [is_show, show] = React.useState(false);
+
+    React.useEffect(() => {
+        if (!is_show) SlideAnimations.slideUp(slide_ref.current);
+        else SlideAnimations.slideDown(slide_ref.current);
+    }, [is_show]);
+
     return (
-        <div className="d-flex content-between items-center app__header p-10">
-            <div className="flex-grow-none">
-                <h1 className="logo color-primary">CV</h1>
+        <div className="d-flex d-flex-c app__header p-10">
+            <div className="d-flex">
+                <div className="d-flex m-flex-grow-none content-between">
+                    <h1 className="logo color-primary">CV</h1>
+                </div>
+                <div className="m-hide d-flex content-end items-center">
+                    <button
+                        style={{ width: 40, height: 40 }}
+                        onClick={() => show((s) => !s)}
+                        className="text-20 btn icon-btn text-primary contained-pirmary p-10"
+                    >
+                        {is_show ? (
+                            <i className="fi fi-rr-cross d-flex content-center items-center"></i>
+                        ) : (
+                            <i className="fi fi-rr-menu-burger d-flex content-center items-center"></i>
+                        )}
+                    </button>
+                </div>
+                <div className="hide m-d-flex mt-10 d-flex-c m-d-flex-r m- content-around m-content-end items-center navbar">
+                    <div className="nav-item my-10 m-my-0">
+                        <a href="#about" className="btn text-primary d-block w-100 m-w-auto">
+                            {Lang.about[lang]}
+                        </a>
+                    </div>
+                    <div className="nav-item my-10 m-my-0">
+                        <a href="#passions" className="btn text-primary d-block w-100 m-w-auto">
+                            {Lang.passions[lang]}
+                        </a>
+                    </div>
+                    <div className="nav-item my-10 m-my-0">
+                        <a href="#porfolio" className="btn text-primary d-block w-100 m-w-auto">
+                            {Lang.porfolio[lang]}
+                        </a>
+                    </div>
+                    <div className="nav-item my-10 m-my-0">
+                        <a
+                            href="#contact-me"
+                            className="btn btn-primary contained contained-primary d-block w-100 m-w-auto"
+                        >
+                            {Lang.contact_me[lang]}
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div className="d-flex content-end items-center navbar">
-                <div className="nav-item">
-                    <a href="#about" className="btn text-primary">
+
+            <div ref={slide_ref} className="d-flex hide m-d-flex-r hide content-around items-center navbar">
+                <div className="nav-item my-10 m-my-0 w-100 text-center" onClick={() => show(false)}>
+                    <a href="#about" className="btn text-primary d-block">
                         {Lang.about[lang]}
                     </a>
                 </div>
-                <div className="nav-item">
-                    <a href="#passions" className="btn text-primary">
+                <div className="nav-item my-10 m-my-0 w-100 text-center" onClick={() => show(false)}>
+                    <a href="#passions" className="btn text-primary d-block">
                         {Lang.passions[lang]}
                     </a>
                 </div>
-                <div className="nav-item">
-                    <a href="#porfolio" className="btn text-primary">
+                <div className="nav-item my-10 m-my-0 w-100 text-center" onClick={() => show(false)}>
+                    <a href="#porfolio" className="btn text-primary d-block">
                         {Lang.porfolio[lang]}
                     </a>
                 </div>
-                <div className="nav-item">
-                    <a href="#contact-me" className="btn btn-primary contained contained-primary">
+                <div className="nav-item my-10 m-my-0 w-100 text-center" onClick={() => show(false)}>
+                    <a href="#contact-me" className="btn btn-primary contained contained-primary d-block">
                         {Lang.contact_me[lang]}
                     </a>
                 </div>
